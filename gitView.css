@@ -1,0 +1,15 @@
+.loginForm {
+	border:1px solid #c1c1c1;
+}
+
+li:nth-child(odd){
+	background-color: #c1c1c1;
+}
+
+.user-repositories{
+	display:none;
+}
+
+.createIssue{
+	cursor:pointer;
+}

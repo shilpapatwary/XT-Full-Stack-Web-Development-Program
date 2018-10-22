@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Git Login</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="gitView.css">
+</head>
+<body>
+<div class="container h-100 d-flex justify-content-center align-items-center">
+	<div class="col-lg-6 col-md-10">
+		<div class="logo"></div>
+		<div class="loginHeader mt-3  text-center"><h5>Sign in to GitHub</h5></div>
+		<div class="loginForm form-group p-3">
+			<label for="login_username" class="d-block ">Enter username</label>
+			<input type="text" name="username" id="login_username" class="form-control " placeholder="Enter email">
+			<button type="submit" id="gitSubmit" class="btn btn-primary mt-3 col-3">Submit</button>
+		</div>
+</div>
+</div>
+
+<div class="container user-repositories">
+	<ul class="list-group" id="user-repo-list"></ul>
+</div>
+
+
+
+<div id="issueFormModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      	<h4 class="modal-title">New Issue</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body form-group issue-form">
+      	
+       <label>Name</label>
+       	<input type="text" class="form-control" required>
+       	<label class="pt-2">Description</label>
+       	<input type="text" class="form-control" required>
+       	<label class="pt-2">Assignee</label>
+       	<input type="text" name="" class="form-control">
+       	<button type="submit" id="newIssueSubmit" class="btn btn-primary mt-3 col-3">Submit</button>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script type="text/template" id="repositoryTemplate">
+	<div>
+		<li class="list-group-item d-flex justify-content-between align-items-center" id=""><span class="repoName">Repository 1</span>
+			<div><span class="badge badge-primary badge-pill mr-3 issueCount">0</span><button class="createIssue btn" data-repo="" data-toggle="modal" data-target="#issueFormModal">New Issue</button></div></li>
+	</div>
+</script>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="mock.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
